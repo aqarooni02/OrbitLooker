@@ -6,14 +6,14 @@ there are no collisions
 
 ### Tech Stack
 
--HTML
--CSS
--JavaScript
--React Framework
+- HTML
+- CSS
+- JavaScript
+- React Framework
 
 ### How to Run
 
--Clone repo using git clone "Repo url"
--Change into the cloned directory "cd githublab8"
--Ensure node and npm is installed and run "npm i"
--Run "npm run dev" to start a local server and view the webpage
+- Clone repo using git clone "Repo url"
+- Change into the cloned directory "cd githublab8"
+- Ensure node and npm is installed and run "npm i"
+- Run "npm run dev" to start a local server and view the webpage
