@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Globe from "react-globe.gl";
 import * as satellite from "satellite.js";
 
-export default function SatelliteGlobe({ group, selectSatellite}) {
+export default function SatelliteGlobe({ group }) {
   const [satellites, setSatellites] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,6 @@ export default function SatelliteGlobe({ group, selectSatellite}) {
           const name = lines[i].trim();
           const tle1 = lines[i + 1];
           const tle2 = lines[i + 2];
-          const noradId = tle1.substring(2, 7);
 
           try {
             const satrec = satellite.twoline2satrec(tle1, tle2);
@@ -33,7 +32,6 @@ export default function SatelliteGlobe({ group, selectSatellite}) {
             const geo = satellite.eciToGeodetic(posVel.position, gmst);
 
             satObjects.push({
-              noradId,
               name,
               lat: satellite.degreesLat(geo.latitude),
               lng: satellite.degreesLong(geo.longitude),
@@ -67,7 +65,7 @@ export default function SatelliteGlobe({ group, selectSatellite}) {
         height={600}
         bumpImageUrl={"//unpkg.com/three-globe/example/img/earth-topology.png"}
         backgroundColor="rgba(0,0,0,0)"
-        onPointClick={(point) => selectSatellite(point)}
+        onPointClick={(point) => console.log(point)}
       />
     </div>
   );

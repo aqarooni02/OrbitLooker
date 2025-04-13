@@ -1,10 +1,8 @@
 import { useState } from "react";
 import SatelliteGlobe from "../components/SatelliteGlobe";
-import { SatelliteCard } from "../components/SatelliteCard";
 
 export const MainScreen = () => {
     const [group, setGroup] = useState("last-30-days");
-    const [selectedSatellite, setSelectedSatellite] = useState()
 
     const satelliteGroups = [
         { label: "Last 30 Days", value: "last-30-days" },
@@ -16,17 +14,6 @@ export const MainScreen = () => {
         { label: "Geostationary", value: "geo" },
     ];
 
-    const selectSatellite = (satellite) => {
-
-        setSelectedSatellite(satellite)
-    }
-
-    const handleChangeGroup = (e) => {
-        setSelectedSatellite()
-        setGroup(e.target.value)
-    }
-
-
     return (
         <div className="mainscreen">
             <h1>Welcome to Orbit Looker</h1>
@@ -34,7 +21,7 @@ export const MainScreen = () => {
 
             <select
                 value={group}
-                onChange={handleChangeGroup}
+                onChange={(e) => setGroup(e.target.value)}
                 style={{ padding: "0.5rem", fontSize: "1rem", marginBottom: "1rem" }}
             >
                 {satelliteGroups.map((g) => (
@@ -44,12 +31,9 @@ export const MainScreen = () => {
                 ))}
             </select>
 
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: "space-between", minWidth: '50%'}}>
-                <SatelliteGlobe group={group} selectSatellite={selectSatellite} />
-                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '5%', textAlign: 'left'}}>
-                    {!selectedSatellite && <h2>Click on a point to see more details!</h2>}
-                    <SatelliteCard satellite={selectedSatellite} />
-                </div>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyItems: "space-between"}}>
+                <SatelliteGlobe group={group} />
+                <h2 style={{marginTop: '5%'}}>Click on a point to see more details!</h2>
             </div>
         </div>
     );
