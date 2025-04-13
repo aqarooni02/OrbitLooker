@@ -32,7 +32,7 @@ export const MainScreen = () => {
             </select>
 
 
-                <SatelliteGlobe group={group} />
+            <SatelliteGlobe group={group} />
         </div>
     );
 };
