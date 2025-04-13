@@ -1,8 +1,7 @@
 ## NASA Project Idea
 
-Website that shows the current satelites orbiting earth using an API
-It helps track the current satelites and their orbits so that during launch
-there are no collisions
+Website that shows the current satellites orbiting earth using an API
+It has a vizualisation of the position of the satellites and information about it.
 
 ### Tech Stack
 
