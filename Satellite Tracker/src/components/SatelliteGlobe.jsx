@@ -55,7 +55,7 @@ export default function SatelliteGlobe({ group, selectSatellite}) {
   return (
     <div>
       <Globe
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
+        globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
         pointsData={satellites}
         pointLat="lat"
         pointLng="lng"

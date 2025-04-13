@@ -44,7 +44,7 @@ export const MainScreen = () => {
                 ))}
             </select>
 
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: "space-between", minWidth: '50%'}}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
                 <SatelliteGlobe group={group} selectSatellite={selectSatellite} />
                 <div style={{ display: 'flex', flexDirection: 'column', marginTop: '5%', textAlign: 'left'}}>
                     {!selectedSatellite && <h2>Click on a point to see more details!</h2>}
