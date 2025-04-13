@@ -61,6 +61,7 @@ export default function SatelliteGlobe({ group }) {
         pointRadius={1}
         pointAltitude={() => 0.01}
         pointColor={() => "orange"}
+        width={600}
         height={600}
         bumpImageUrl={"//unpkg.com/three-globe/example/img/earth-topology.png"}
         backgroundColor="rgba(0,0,0,0)"

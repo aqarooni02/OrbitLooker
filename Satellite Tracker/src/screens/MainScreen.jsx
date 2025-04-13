@@ -31,8 +31,10 @@ export const MainScreen = () => {
                 ))}
             </select>
 
-
-            <SatelliteGlobe group={group} />
+            <div style={{ display: 'flex', flexDirection: 'row', justifyItems: "space-between"}}>
+                <SatelliteGlobe group={group} />
+                <h2 style={{marginTop: '5%'}}>Click on a point to see more details!</h2>
+            </div>
         </div>
     );
 };
