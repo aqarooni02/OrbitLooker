@@ -65,10 +65,9 @@ export const MainScreen = () => {
                 ))}
             </select>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center'}}>
                 <SatelliteGlobe group={group} selectSatellite={selectSatellite} />
-                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '5%', textAlign: 'left'}}>
-                    {!selectedSatellite && <h2>Click on a point to see more details!</h2>}
+                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left'}}>
                     <SatelliteCard satellite={selectedSatellite} />
                 </div>
             </div>
