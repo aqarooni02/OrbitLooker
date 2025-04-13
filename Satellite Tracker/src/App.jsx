@@ -1,13 +1,11 @@
 
 import './App.css'
+import { MainScreen } from './screens/MainScreen'
 
 function App() {
 
   return (
-    <>
-	  <div>Hello Earth!</div>
-    <button></button>
-    </>
+    <MainScreen/>
   )
 }
 
