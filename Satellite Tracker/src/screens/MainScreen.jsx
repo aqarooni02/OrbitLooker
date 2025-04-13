@@ -16,10 +16,31 @@ export const MainScreen = () => {
         { label: "Geostationary", value: "geo" },
     ];
 
-    const selectSatellite = (satellite) => {
-
-        setSelectedSatellite(satellite)
-    }
+    const selectSatellite = async (satellite) => {
+        try {
+            const res = await fetch(`https://celestrak.org/satcat/records.php?CATNR=${satellite.noradId}&FORMAT=json`);
+            const data = await res.json();
+    
+            if (data.length > 0) {
+                const extra = data[0];
+                setSelectedSatellite({
+                    ...satellite,
+                    launchDate: extra.LAUNCH_DATE,
+                    owner: extra.OWNER,
+                    objectType: extra.OBJECT_TYPE,
+                    apogee: extra.APOGEE,
+                    perigee: extra.PERIGEE,
+                    inclination: extra.INCLINATION,
+                    launchSite: extra.LAUNCH_SITE,
+                });
+            } else {
+                setSelectedSatellite(satellite); // fallback
+            }
+        } catch (err) {
+            console.error("Failed to fetch SATCAT info:", err);
+            setSelectedSatellite(satellite); // fallback
+        }
+    };
 
     const handleChangeGroup = (e) => {
         setSelectedSatellite()
